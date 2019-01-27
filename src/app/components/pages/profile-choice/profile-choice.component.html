@@ -1,0 +1,29 @@
+<div class="container">
+  <!-- Choix du profil -->
+  <div class="row justify-content-center pb-3 border-bottom">
+    <form class="form-row" [formGroup]="form">
+      <div class="form-group form-col">
+        <label for="profile">Sélectionnez un profil pré-rempli : </label>
+        <ng-select id="profile"
+          bindLabel="name"
+          [items]="savedProfiles"
+          formControlName="profile">
+        </ng-select>
+        <div class="col d-flex justify-content-center">
+          <button type="button" class="btn btn-success pt-1 mt-1" routerLink="loading" [disabled]="!profile">Je veux lire !</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+  
+  <div class="row">
+    <div *ngIf="profile" class="row">
+      <div *ngFor="let review of profile?.reviews; let i = index" class="col-md-4 col-lg-3">
+        <app-book-display [asin]="review.asin"></app-book-display>
+        <p class="mb-2">Note : {{review.overall}}/5</p>
+      </div>
+    </div> 
+  </div>
+  
+</div>

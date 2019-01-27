@@ -1,0 +1,9 @@
+<div class="container" *ngIf="loading">
+  <div class="row justify-content-center">
+    <div class="lds-dual-ring"></div>
+  </div>
+  <div class="row justify-content-center mt-5">
+    <button type="button" class="btn btn-danger" routerLink="/recommendations">Annuler</button>
+  </div>
+</div>
+<app-recommendation-results *ngIf="!loading" [results]="results"></app-recommendation-results>

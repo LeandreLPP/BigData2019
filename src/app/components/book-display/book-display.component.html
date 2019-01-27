@@ -1,0 +1,7 @@
+<div class="card">
+  <img src="{{book?.imageURL}}" class="card-img-top" height="200rm">
+  <div class="card-body">
+    <p class="card-title">{{book?.title}}</p>
+    <p class="card-text" *ngIf="!book">Loading {{asin}}</p>
+  </div>
+</div>
