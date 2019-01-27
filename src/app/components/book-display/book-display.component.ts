@@ -8,8 +8,8 @@ import { Book } from '../../model/book';
   styleUrls: ['./book-display.component.scss']
 })
 export class BookDisplayComponent implements OnInit {
-  private asin: string;
-  private book: Book;
+  asin: string;
+  book: Book;
 
   @Input('asin')
   set setAsin(asin: string) {
